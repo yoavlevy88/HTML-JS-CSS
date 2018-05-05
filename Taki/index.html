@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Taki 2018</title>
+    <script src="./js/container.js"></script>
+    <script src="./js/round.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/bot.js"></script>
+    <script src="./js/UI.js"></script>
+    <script src="./js/gameLogics.js"></script>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+
+<body background="./css/assets/background.png">
+    <div id='page_content'>
+
+        <div id="openingPage">
+            <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type "text/css">
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/c7/Taki_Cards_Game_Logo.png" id="Taki_imeg">
+            <div id="Y&Alogo">
+                <h1>Y&A STUDIOS</h1>
+            </div>
+            <a onclick="startGame()" id="startButton"><img src="./css/assets/button_start-game.png"></a>
+            <div id="niceToKnow">
+                <img src="https://images1.ynet.co.il/PicServer5/2017/07/09/7894757/9278958_9279014_rumble.jpg" id="Haim_imeg">
+                <h3>*An Israeli card game developed by the game developer Haim Shafir</h3>
+                <h4>Immediately upon its publication in 1983, it became a bestseller and sold successfully in several countries, primarily Israel</h4>
+            </div>
+        </div>
+
+        <div id="gameScreen">
+            <div id="pile"></div>
+            <img id="PlayerTurn" src="./css/assets/your-turn.png">
+            <div id="deck">
+                <img class="cards" id="deck_imeg" src="./css/assets/card_back.png"></img>
+                <a onclick="Round.GetCardFromDeck()" id="takeCard_button"><img src="./css/assets/button_take-card.png"></img></a>
+                <a onclick="retireGame()" id="retireButton"><img src="./css/assets/button_retire.png"></a>
+            </div>
+
+            <div id="game-stats-inside">
+                <img id="inside_stats_imeg" src="./css/assets/stats.png"></img>
+                <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type "text/css">
+
+                <h3>Number of turns: <a id="num_turns">0</a></h3>
+                <h3>Time: <a id="timer">0:0:0</a></h3>
+                <h3>Turn avg time: <a id="avg_time">0:0:0</a></h3>
+                <h3>Number of "last card": <a id="last_one">0</a></h3>
+            </div>
+        </div>
+
+        <div id="modals">
+            <div id="pickColorModal">
+                <button id="green" class="changeColorBottons" onclick="Round.selectColor('green')" style="background:green;">green</button>
+                <button id="red" class="changeColorBottons" onclick="Round.selectColor('red')" style="background:red;">red</button>
+                <button id="yellow" class="changeColorBottons" onclick="Round.selectColor('yellow')" style="background:yellow;">yellow</button>
+                <button id="blue" class="changeColorBottons" onclick="Round.selectColor('blue')" style="background:blue;">blue</button>
+            </div>
+        </div>
+        <div id="endGame">
+            <img src="https://media0.giphy.com/media/l3q2K12v7LgvwlATC/giphy.gif" id="LOSER_imeg">
+            <img src="https://media1.giphy.com/media/2gtoSIzdrSMFO/giphy.gif" id="WINNER_imeg">
+            <div id="game-stats-end">
+                <h3>Game number of turns: <a id="Round_num_turns">0</a></h3>
+                <h3>Number of "last card" times: <a id="Round_last_one">0</a></h3>
+                <h3>Round turns avg time: <a id="Round_avg_time">0:0:0</a></h3>
+                <h3>All rounds turns avg time: <a id="Round_all_avg_time">0:0:0</a></h3>
+            </div>
+            <div id="newGameButton">
+                <a onclick="startNewGame()"><img src="./css/assets/button_new-game.png"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
